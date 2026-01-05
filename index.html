@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoMaster - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="user-info">
+                <span id="welcome-user"></span>
+                <button class="logout-btn" onclick="handleLogout()">Logout</button>
+            </div>
+            <h1>Algorithm Master</h1>
+            <p style="color: #ccc; margin-top: 10px;">Select a topic to visualize</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchBar" placeholder="Search (e.g., Bubble Sort, Trees)..." onkeyup="filterTopics()">
+            </div>
+        </div>
+
+        <div class="grid">
+            <a href="bubble.html" class="card">
+                <h2>Bubble Sort</h2>
+                <p>Swaps adjacent elements repeatedly to sort the array.</p>
+            </a>
+            <a href="selection.html" class="card"> <h2>Selection Sort</h2>
+                <p>Selects the smallest element and moves it to the front.</p>
+            </a>
+            <a href="insertion.html" class="card"> <h2>Insertion Sort</h2>
+                <p>Builds the sorted array one item at a time.</p>
+            </a>
+
+            <a href="binary.html" class="card">
+                <h2>Binary Search</h2>
+                <p>Divide and Conquer search on sorted arrays.</p>
+            </a>
+            <a href="linear.html" class="card">
+                <h2>Linear Search</h2>
+                <p>Simple sequential search method.</p>
+            </a>
+
+            <a href="linkedlist.html" class="card">
+                <h2>Linked List</h2>
+                <p>Linear structure where elements point to the next.</p>
+            </a>
+            <a href="circular-linkedlist.html" class="card">
+                <h2>Circular Linked List</h2>
+                <p>Last node points back to the first node.</p>
+            </a>
+            <a href="doubly-linkedlist.html" class="card">
+                <h2>Doubly Linked List</h2>
+                <p>Nodes with pointers to both next and previous.</p>
+            </a>
+            <a href="queue.html" class="card">
+                <h2>Queue</h2>
+                <p>FIFO (First In First Out) structure.</p>
+            </a>
+            <a href="tree.html" class="card">
+                <h2>Trees</h2>
+                <p>Hierarchical structure with root and child nodes.</p>
+            </a>
+            <a href="graph.html" class="card">
+                <h2>Graphs</h2>
+                <p>Network of nodes connected by edges.</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

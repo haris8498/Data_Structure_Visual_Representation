@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Bubble Sort</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.</p>
+            <br>
+            <p><strong>Time Complexity:</strong> O(n²) | <strong>Space Complexity:</strong> O(1)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="visualizer-container" id="sort-visualizer">
+                </div>
+            <div class="controls">
+                <button class="btn" onclick="generateArray()">Reset Array</button>
+                <button class="btn" onclick="runBubbleSort()">Start Sorting</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">C++ Code</h2>
+<pre>
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1])
+                swap(arr[j], arr[j+1]);
+        }
+    }
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

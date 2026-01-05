@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Selection Sort</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>Selection Sort repeatedly selects the smallest (or largest) element from the unsorted portion and moves it to the sorted portion.</p>
+            <br>
+            <p><strong>Time Complexity:</strong> O(n²) | <strong>Space Complexity:</strong> O(1)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="visualizer-container" id="selection-visualizer">
+                </div>
+            <div class="controls">
+                <button class="btn" onclick="generateSelectionArray()">Reset Array</button>
+                <button class="btn" onclick="runSelectionSort()">Start Sorting</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">C++ Code</h2>
+<pre>
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        int minIdx = i;
+        for (int j = i+1; j < n; j++) {
+            if (arr[j] < arr[minIdx])
+                minIdx = j;
+        }
+        swap(arr[i], arr[minIdx]);
+    }
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

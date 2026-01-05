@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Binary Search</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>Binary Search looks for a specific element in a <strong>sorted</strong> array by repeatedly dividing the search interval in half.</p>
+            <br>
+            <p><strong>Time Complexity:</strong> O(log n)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="search-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Click "Start Search" to find number 60</p>
+            </div>
+            <div class="visualizer-container" id="search-visualizer">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="generateSearchArray()">Reset Array</button>
+                <button class="btn" onclick="runBinarySearch()">Start Search</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Code</h2>
+<pre>
+int binarySearch(int arr[], int l, int r, int x) {
+    while (l <= r) {
+        int m = l + (r - l) / 2;
+        if (arr[m] == x) return m;
+        if (arr[m] < x) l = m + 1;
+        else r = m - 1;
+    }
+    return -1;
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

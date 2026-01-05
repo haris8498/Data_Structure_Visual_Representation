@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Tree - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Binary Tree</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>A Binary Tree is a hierarchical data structure where each node has at most two children, referred to as the left child and the right child.</p>
+            <br>
+            <p><strong>Properties:</strong> Root, Parent, Children, Leaf nodes, Height, Depth</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="tree-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Binary Tree Structure</p>
+            </div>
+            <div class="visualizer-container" id="tree-visualizer" style="height: 450px; flex-direction: column; justify-content: flex-start; padding-top: 30px;">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="resetTree()">Reset Tree</button>
+                <button class="btn" onclick="inorderTraverse()">Inorder</button>
+                <button class="btn" onclick="preorderTraverse()">Preorder</button>
+                <button class="btn" onclick="postorderTraverse()">Postorder</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Structure Code</h2>
+<pre>
+struct Node {
+    int data;
+    Node *left, *right;
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+void inorder(Node* root) {
+    if (root == nullptr) return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

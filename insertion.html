@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Insertion Sort</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>Insertion Sort builds the final sorted array one item at a time by inserting each element into its correct position.</p>
+            <br>
+            <p><strong>Time Complexity:</strong> O(n²) | <strong>Space Complexity:</strong> O(1)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="visualizer-container" id="insertion-visualizer">
+                </div>
+            <div class="controls">
+                <button class="btn" onclick="generateInsertionArray()">Reset Array</button>
+                <button class="btn" onclick="runInsertionSort()">Start Sorting</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">C++ Code</h2>
+<pre>
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Linear Search</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>Linear Search is a simple searching algorithm that checks every element in the array sequentially until the target is found or the end is reached.</p>
+            <br>
+            <p><strong>Time Complexity:</strong> O(n) | <strong>Space Complexity:</strong> O(1)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="linear-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Click "Start Search" to find number 75</p>
+            </div>
+            <div class="visualizer-container" id="linear-visualizer">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="generateLinearArray()">Reset Array</button>
+                <button class="btn" onclick="runLinearSearch()">Start Search</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Code</h2>
+<pre>
+int linearSearch(int arr[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Graph</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>A Graph is a non-linear data structure consisting of vertices (nodes) and edges (connections). Graphs can be directed or undirected, weighted or unweighted.</p>
+            <br>
+            <p><strong>Types:</strong> Directed, Undirected, Weighted, Cyclic, Acyclic</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="graph-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Undirected Graph - Nodes connected by edges</p>
+            </div>
+            <div class="visualizer-container" id="graph-visualizer" style="height: 400px; position: relative;">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="resetGraph()">Reset Graph</button>
+                <button class="btn" onclick="highlightPath()">Highlight Path</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Adjacency List Code</h2>
+<pre>
+class Graph {
+    int V;
+    list<int> *adj;
+public:
+    Graph(int V) {
+        this->V = V;
+        adj = new list<int>[V];
+    }
+    
+    void addEdge(int u, int v) {
+        adj[u].push_back(v);
+        adj[v].push_back(u); // Undirected
+    }
+    
+    void BFS(int s) {
+        bool visited[V] = {false};
+        queue<int> q;
+        visited[s] = true;
+        q.push(s);
+        while (!q.empty()) {
+            s = q.front();
+            cout << s << " ";
+            q.pop();
+            for (auto i : adj[s]) {
+                if (!visited[i]) {
+                    visited[i] = true;
+                    q.push(i);
+                }
+            }
+        }
+    }
+};
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

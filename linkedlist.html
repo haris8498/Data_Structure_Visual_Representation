@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Linked List</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>A Linked List is a linear data structure where elements are not stored at contiguous memory locations. The elements are linked using pointers.</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="list-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Singly Linked List - Click buttons to add/remove nodes</p>
+            </div>
+            <div class="visualizer-container" id="list-visualizer" style="align-items: center; overflow-x: auto;">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="addNode()">Add Node</button>
+                <button class="btn" onclick="removeNode()">Remove Node</button>
+                <button class="btn" onclick="resetList()">Reset</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Structure Code</h2>
+<pre>
+struct Node {
+    int data;
+    Node* next;
+};
+
+void insertEnd(Node*& head, int data) {
+    Node* newNode = new Node();
+    newNode->data = data;
+    newNode->next = nullptr;
+    if (!head) {
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next) temp = temp->next;
+    temp->next = newNode;
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

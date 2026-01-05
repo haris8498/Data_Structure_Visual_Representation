@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubly Linked List - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Doubly Linked List</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>A Doubly Linked List is a linked list where each node contains a data field and two pointers: one to the next node and one to the previous node.</p>
+            <br>
+            <p><strong>Advantage:</strong> Can traverse in both directions. Easier deletion and insertion operations.</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="doubly-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">Doubly Linked List - Bi-directional traversal</p>
+            </div>
+            <div class="visualizer-container" id="doubly-visualizer" style="align-items: center; overflow-x: auto;">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="addDoublyNode()">Add Node</button>
+                <button class="btn" onclick="removeDoublyNode()">Remove Node</button>
+                <button class="btn" onclick="resetDoublyList()">Reset</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Structure Code</h2>
+<pre>
+struct Node {
+    int data;
+    Node* next;
+    Node* prev;
+};
+
+void insertEnd(Node*& head, int data) {
+    Node* newNode = new Node();
+    newNode->data = data;
+    newNode->next = nullptr;
+    if (!head) {
+        newNode->prev = nullptr;
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next) temp = temp->next;
+    temp->next = newNode;
+    newNode->prev = temp;
+}
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue - Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>Queue</h1>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Definition</h2>
+            <p>A Queue is a linear data structure that follows the First In First Out (FIFO) principle. Elements are added at the rear and removed from the front.</p>
+            <br>
+            <p><strong>Operations:</strong> Enqueue (add), Dequeue (remove), Peek (view front)</p>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Visual Implementation</h2>
+            <div class="info-box">
+                <p id="queue-result" style="text-align:center; font-size:1.1rem; font-weight:bold; margin:15px 0;">FIFO - First In First Out</p>
+            </div>
+            <div class="queue-labels">
+                <span class="queue-label">← FRONT (Dequeue)</span>
+                <span class="queue-label">REAR (Enqueue) →</span>
+            </div>
+            <div class="visualizer-container" id="queue-visualizer" style="align-items: center;">
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="enqueue()">Enqueue</button>
+                <button class="btn" onclick="dequeue()">Dequeue</button>
+                <button class="btn" onclick="resetQueue()">Reset</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 style="color: var(--gold);">Structure Code</h2>
+<pre>
+class Queue {
+    int arr[MAX];
+    int front, rear;
+public:
+    Queue() { front = -1; rear = -1; }
+    
+    void enqueue(int x) {
+        if (rear == MAX - 1) return; // Full
+        if (front == -1) front = 0;
+        arr[++rear] = x;
+    }
+    
+    int dequeue() {
+        if (front == -1) return -1; // Empty
+        int x = arr[front];
+        if (front == rear) front = rear = -1;
+        else front++;
+        return x;
+    }
+};
+</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
